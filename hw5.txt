@@ -1,0 +1,114 @@
+1a)                              50
+			     /        \
+                         20             60
+		    /	      \		    \
+                10              40              70
+	          \           /		      /    \
+                   15       30		   65       80
+			   /   \	     	  /
+		         25     38   	       72
+
+1b) Tree traversals.
+PRE ORDER: 50 20 10 15 40 30 25 38 60 70 65 80 72
+IN ORDER: 10 15 20 25 30 38 40 50 60 65 70 72 80
+POST ORDER: 15 10 25 38 30 40 20 65 72 80 70 60 50
+
+1c) AFTER DELETING 30
+	 			 50
+			     /        \
+                         20             60
+		    /	      \		    \
+                10              40              70
+	          \           /		      /    \
+                   15       38		   65       80
+			   /     	     	  /
+		         25       	       72
+
+     				
+
+
+
+   AFTER DELETING 20
+	
+                                50
+			    /	     \
+                        25             60
+		    /        \             \
+                10            40              70
+		  \	     /		     /   \
+                    15     38		   65      80
+					     	 /
+		            	              72
+
+2a)
+struct BinaryTreeNode{
+	BinaryTreeNode* left;
+	BinaryTreeNode* right;
+	BinaryTreeNode* parent;
+	int value;
+};
+
+2b)
+void insertNewNode(int val){
+	BinaryTreeNode* traversal = root node
+	if(traversal == nullptr)
+		allocate a new node that the root will point to
+		Assign its value to val 
+		Set its parent and left/right children to null
+		return
+
+	while(traversal != nullptr){
+	//Traversing down the binary tree comparing the value to insert 
+		If (val < traversal->value && traversal ->left != nullptr)
+			traversal = traversal -> left
+		Else if(val > traversal->value && traversal->right != nullptr
+			traversal = traversal -> right 
+		If(val == traversal -> value)
+			Return (we can't have repeated values)
+	
+	//Now we have traversed down to where we want to insert
+		If (val < traversal && traversal -> left == nullptr){
+			Allocate a new node at traversal -> left
+			Assign its value to val
+			Set its parent pointer to traversal
+			Set its left and right children to nullptr
+			return
+		}
+
+		If (val > traversal && traversal -> right == nullptr){
+			Allocate a new node at traversal -> right
+			Assign its value to val
+			Set its parent pointer to traversal
+			Set its left and right children to nullptr
+			return
+		}
+	}
+
+}
+
+3a)				7
+			    /	     \
+			3		 6
+		    /       \ 	       /		
+		0	       2     4 	
+
+3b)  7 | 3 | 6 | 0 | 2 | 4
+
+3c) 6 | 3 | 4 | 0 | 2 
+
+4a) This is O(C+S)
+
+4b) This is O(logC + S)
+
+4c) This is O(logC + logS)
+
+4d) This is O(logS)
+
+4e) This is O(1)
+
+4f) This is O(logC + S)
+
+4g) This is O(S)
+
+4h) This is O(C*logS)
+
